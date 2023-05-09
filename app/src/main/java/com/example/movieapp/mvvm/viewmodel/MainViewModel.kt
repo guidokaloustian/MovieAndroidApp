@@ -31,7 +31,7 @@ class MainViewModel(private val model: MainContract.Model) : ViewModel(), MainCo
 
     data class MainData(
         val status: Status,
-        val exercises: List<Movie>,
+        val movies: List<Movie>,
     )
 
     enum class Status {

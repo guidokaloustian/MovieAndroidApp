@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="button_style">
+        <item name="android:backgroundTint">@color/red</item>
+        <item name="android:textSize">@dimen/button_text</item>
+    </style>
+
+    <style name="title_style">
+    <item name="android:textColor">@color/black</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textSize">@dimen/titles_size</item>
+    </style>
+</resources>

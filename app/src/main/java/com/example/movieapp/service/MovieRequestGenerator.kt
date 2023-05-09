@@ -5,7 +5,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object MovieRequestGenerator {
-    private const val API_MOVIES_URL = "https://api.themoviedb.org"
+    private const val API_MOVIES_URL = "https://api.themoviedb.org/"
 
     private val httpClient = OkHttpClient.Builder()
 

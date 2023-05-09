@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">MovieApp</string>
+    <string name="android_desc">android_img</string>
+    <string name="main_title">Movie App</string>
+    <string name="get_started">Get started!</string>
+    <string name="description">Welcome to Movie App, where you can find ratings and description for the most popular movies ever released. Click below to start exploring!</string>
+
+    <string name="content_description">contentDescription</string>
+    <string name="card_title">Title: %1$s</string>
+    <string name="card_votes">Votes: %1$s</string>
+    <string name="card_date">Date: %1$s</string>
+    <string name="recycler_title">Most popular movies</string>
 </resources>
