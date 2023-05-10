@@ -8,6 +8,6 @@
     <string name="content_description">contentDescription</string>
     <string name="card_title">Title: %1$s</string>
     <string name="card_votes">Votes: %1$s</string>
-    <string name="card_date">Date: %1$s</string>
+    <string name="card_date">Date released: %1$s</string>
     <string name="recycler_title">Most popular movies</string>
 </resources>

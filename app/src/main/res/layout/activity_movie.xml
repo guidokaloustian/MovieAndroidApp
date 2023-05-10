@@ -20,7 +20,7 @@
 
     <TextView
         android:id="@+id/title_recycler_view"
-        style="@style/title_style"
+        style="@style/main_title_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"

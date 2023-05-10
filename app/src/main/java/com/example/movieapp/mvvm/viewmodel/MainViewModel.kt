@@ -23,7 +23,7 @@ class MainViewModel(private val model: MainContract.Model) : ViewModel(), MainCo
                     mutableLiveData.value = MainData(Status.SHOW_INFO, result.data)
                 }
                 is CoroutineResult.Failure -> {
-                    // TODO: see what should response
+                    mutableLiveData.value = MainData(Status.ERROR, exception = result.exception)
                 }
             }
         }
@@ -31,10 +31,12 @@ class MainViewModel(private val model: MainContract.Model) : ViewModel(), MainCo
 
     data class MainData(
         val status: Status,
-        val movies: List<Movie>,
+        val movies: List<Movie> = emptyList(),
+        val exception: Exception? = null,
     )
 
     enum class Status {
         SHOW_INFO,
+        ERROR,
     }
 }

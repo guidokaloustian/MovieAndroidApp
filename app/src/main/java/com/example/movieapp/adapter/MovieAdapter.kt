@@ -31,8 +31,11 @@ class MovieAdapter(private val movies: List<Movie>) : RecyclerView.Adapter<Movie
             binding.date.text = itemView.context.getString(R.string.card_date, movie.releaseDate)
 
             Glide.with(itemView.context)
-                .load(movie.image)
+                .load(imageBaseUrl + movie.image)
                 .into(binding.image)
+        }
+        companion object {
+            private const val imageBaseUrl = "https://image.tmdb.org/t/p/w500"
         }
     }
 }

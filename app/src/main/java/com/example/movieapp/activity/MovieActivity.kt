@@ -59,6 +59,9 @@ class MovieActivity : AppCompatActivity() {
                 binding.recycler.layoutManager = LinearLayoutManager(this)
                 binding.recycler.adapter = MovieAdapter(data.movies)
             }
+            else -> {
+
+            }
         }
     }
 
@@ -66,4 +69,5 @@ class MovieActivity : AppCompatActivity() {
         super.onResume()
         viewModel.callService()
     }
+
 }
