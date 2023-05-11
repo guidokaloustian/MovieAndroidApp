@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.DialogFragment
+import com.example.movieapp.activity.MainActivity
+import com.example.movieapp.activity.MovieActivity
 import com.example.movieapp.databinding.ErrorFragmentBinding
 import org.jetbrains.annotations.Nullable
 
@@ -40,6 +42,9 @@ class ErrorDialogFragment : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
+        binding.goBackButtonFragment.setOnClickListener {
+            startActivity(Intent(context, MainActivity::class.java))
+        }
         return binding.root
     }
 
