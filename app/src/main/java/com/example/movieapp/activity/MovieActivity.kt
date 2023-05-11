@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
+import com.example.movieapp.R
 import com.example.movieapp.adapter.MovieAdapter
 import com.example.movieapp.database.MovieDataBaseImpl
 import com.example.movieapp.database.MovieRoomDataBase
@@ -17,10 +18,12 @@ import com.example.movieapp.mvvm.viewmodel.factory.ViewModelFactory
 import com.example.movieapp.service.MovieClient
 import com.example.movieapp.service.MovieRequestGenerator
 import com.example.movieapp.service.MovieServiceImpl
+import com.example.movieapp.util.errorfragment.ErrorDialogFragment
 
 class MovieActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMovieBinding
+    private lateinit var bindingFragment: ErrorDialogFragment
     private lateinit var viewModel: MainContract.ViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,8 +62,11 @@ class MovieActivity : AppCompatActivity() {
                 binding.recycler.layoutManager = LinearLayoutManager(this)
                 binding.recycler.adapter = MovieAdapter(data.movies)
             }
-            else -> {
-
+            MainViewModel.Status.ERROR -> {
+                ErrorDialogFragment.newInstance(
+                    getString(R.string.error_string_title),
+                    getString(R.string.error_description_text),
+                ).show(supportFragmentManager, getString(R.string.error_string))
             }
         }
     }
@@ -69,5 +75,4 @@ class MovieActivity : AppCompatActivity() {
         super.onResume()
         viewModel.callService()
     }
-
 }

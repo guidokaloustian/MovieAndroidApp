@@ -10,4 +10,8 @@
     <string name="card_votes">Votes: %1$s</string>
     <string name="card_date">Date released: %1$s</string>
     <string name="recycler_title">Most popular movies</string>
+    <string name="error_string">ERROR!</string>
+    <string name="error_description_text">La aplicación no ha respondido. Por favor, intentelo de nuevo más tarde</string>
+    <string name="error_string_title">ERROR</string>
+    <string name="go_back">Go back</string>
 </resources>

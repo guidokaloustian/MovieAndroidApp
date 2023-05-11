@@ -36,7 +36,7 @@
         style="@style/button_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go back"
+        android:text="@string/go_back"
         android:layout_marginTop="@dimen/titles_top_margin"
         android:textAllCaps="false"
         app:layout_constraintBottom_toTopOf="@id/recycler"
