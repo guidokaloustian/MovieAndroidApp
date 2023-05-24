@@ -1,9 +1,10 @@
 package com.example.movieapp.mvvm.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.example.movieapp.mvvm.contract.MainContract
-import com.example.movieapp.service.model.Movie
-import com.example.movieapp.util.CoroutineResult
+import com.example.movieapp.clean.presentation.mvvm.viewmodel.MoviesViewModel
+import com.example.movieapp.clean.data.service.model.Movie
+import com.example.movieapp.clean.domain.util.CoroutineResult
+import com.example.movieapp.clean.presentation.mvvm.contract.MovieContract
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK
@@ -24,10 +25,10 @@ class MainViewModelTest {
     @get:Rule
     var rule: TestRule = InstantTaskExecutorRule()
 
-    private lateinit var viewModel: MainViewModel
+    private lateinit var viewModel: MoviesViewModel
 
     @MockK
-    private lateinit var model: MainContract.Model
+    private lateinit var model: MovieContract.Model
 
     @MockK
     private lateinit var movieList: List<Movie>
@@ -36,7 +37,7 @@ class MainViewModelTest {
     fun setup() {
         Dispatchers.setMain(UnconfinedTestDispatcher())
         MockKAnnotations.init(this, relaxed = true)
-        viewModel = MainViewModel(model)
+        viewModel = MoviesViewModel(model)
     }
 
     @After
@@ -51,7 +52,7 @@ class MainViewModelTest {
         runBlocking { viewModel.callService().join() }
 
         assertEquals(movieList, viewModel.getValue().value?.movies)
-        assertEquals(MainViewModel.Status.SHOW_INFO, viewModel.getValue().value?.status)
+        assertEquals(MoviesViewModel.Status.SHOW_INFO, viewModel.getValue().value?.status)
     }
 
     @Test
@@ -60,6 +61,6 @@ class MainViewModelTest {
 
         runBlocking { viewModel.callService().join() }
 
-        assertEquals(MainViewModel.Status.ERROR, viewModel.getValue().value?.status)
+        assertEquals(MoviesViewModel.Status.ERROR, viewModel.getValue().value?.status)
     }
 }

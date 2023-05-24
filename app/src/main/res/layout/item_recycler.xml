@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/card_margin"
     android:elevation="@dimen/card_elevation"
-    tools:context=".activity.MovieActivity">
+    tools:context=".clean.presentation.activity.MovieActivity">
 
     <ImageView
         android:id="@+id/image"
