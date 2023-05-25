@@ -8,6 +8,7 @@ import com.example.movieapp.clean.di.RoomDBModule.roomDBModule
 import com.example.movieapp.clean.di.ServiceModule.serviceModule
 import com.example.movieapp.clean.presentation.di.MainViewModelModule.mainViewModel
 import com.example.movieapp.clean.presentation.di.ModelModule.modelModule
+import com.example.movieapp.clean.presentation.di.MoviesViewModelModule.moviesViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.GlobalContext.startKoin
 
@@ -20,6 +21,7 @@ class MyApplication : Application() {
             modules(
                 listOf(
                     mainViewModel,
+                    moviesViewModel,
                     dataBaseModule,
                     getMoviesUseCaseModule,
                     serviceModule,
